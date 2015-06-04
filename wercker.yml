@@ -42,8 +42,9 @@ build:
         - script:
             name: middleman build
             code: bundle exec middleman build
-
-        - geun/geun.github.io:
+deploy:
+    steps:
+        - lukevivier/gh-pages:
             token: $GH_TOKEN
             basedir: build
             repo: geun/geun.github.io
