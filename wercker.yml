@@ -37,7 +37,7 @@ build:
 #http://luke.vivier.ca/wintersmith-with-wercker/
 deploy:
   steps:
-    - lukevivier/gh-pages:
+    - geun/geun.github.io:
         token: $GH_TOKEN
         basedir: build
         repo: geun/geun.github.io
