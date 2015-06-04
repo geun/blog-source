@@ -41,7 +41,13 @@ build:
 
         - script:
             name: middleman build
-            code: bundle exec middleman deploy
+            code: bundle exec middleman build
+
+        - geun/geun.github.io:
+            token: $GH_TOKEN
+            basedir: build
+            repo: geun/geun.github.io
+
 
 #http://blog.wercker.com/2013/07/25/Using-wercker-to-publish-to-GitHub-pages.html
 #http://luke.vivier.ca/wintersmith-with-wercker/
@@ -51,3 +57,21 @@ build:
 #        token: $GH_TOKEN
 #        basedir: build
 #        repo: geun/geun.github.io
+
+#deploy :
+#  steps :
+#    - script:
+#        name: Configure git
+#        code: |-
+#          git config --global user.email "pleasemailus@wercker.com"
+#          git config --global user.name "wercker"
+#
+#          # remove current .git folder
+#          rm -rf .git
+#    - script:
+#        name: Deploy to github pages
+#        code: |-
+#          git init
+#          git add .
+#          git commit -m "deploy commit from $WERCKER_STARTED_BY"
+#          git push -f $GIT_REMOTE master:gh-pages
