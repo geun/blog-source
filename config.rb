@@ -8,6 +8,7 @@ activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
 
+  blog.layout = "layouts/blog.erb"
   blog.permalink = "{title}.html"
   # Matcher for blog source files
   blog.sources = "articles/{year}-{month}-{day}-{title}.html"
@@ -22,6 +23,7 @@ activate :blog do |blog|
 
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
+  blog.new_article_template =
 
   # Enable pagination
   blog.paginate = true
@@ -117,4 +119,20 @@ activate :deploy do |deploy|
   # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
   # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
   deploy.build_before = true # default: false
+end
+
+configure :development do
+  activate :disqus do |d|
+    # using a special shortname
+    d.shortname = "geunbaecomstaging"
+    # or setting to `nil` will stop Disqus loading
+    # d.shortname = nil
+  end
+end
+
+configure :build do
+  activate :disqus do |d|
+    # using a different shortname for production builds
+    d.shortname = "geunbae"
+  end
 end

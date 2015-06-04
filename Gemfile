@@ -8,6 +8,8 @@ gem 'middleman-deploy', '~> 1.0'
 gem 'middleman-sitemap', '~> 0.0.13'
 gem 'middleman-minify-html'
 
+gem "middleman-disqus"
+
 gem 'middleman-meta-tags'
 gem 'middleman-youtube', github: 'geun/middleman-youtube'
 
