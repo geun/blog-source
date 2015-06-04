@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-aria.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.1.3/hammer.min.js"></script>
+
+  </head>
+  <body ng-app="materialApp" layout-fill layout='column'>
+    <div ng-controller="AppCtrl" layout='column' flex>
+      <md-toolbar class='md-medium-tall'>
+        <div class="md-toolbar-tools">
+          <span>Fixed to Top</span>
+          <span flex></span>
+          <md-button class="md-raised" ng-click="toggleContent(!displayContent)">toggle content</md-button>
+        </div>
+      </md-toolbar>
+      <main class='md-padding' layout="row" flex>
+        <div flex>
+          <md-card ng-if="displayContent" ng-repeat = "card in cards">
+            {{$index}}
+            {{card.title}}
+            {{card.text}}
+          </md-card>
+        </div>
+        <div flex>
+          <md-card ng-if="displayContent" ng-repeat = "card in cards">
+            {{$index}}
+            {{card.title}}
+            {{card.text}}
+          </md-card>
+        </div>
+      </main>
+      <md-toolbar class="md-medium-tall">
+        <div layout="row" layout-align="center center" flex>
+          <span>FOOTER</span>
+        </div>
+      </md-toolbar>
+    </div>
+  </body>
+</html>

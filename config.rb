@@ -34,7 +34,7 @@ activate :directory_indexes
 page "/feed.xml", layout: false
 #https://github.com/statonjr/middleman-sitemap
 activate :sitemap, hostname: "http://geunbae.com"
-
+activate :youtube
 ###
 # Compass
 ###
@@ -92,6 +92,8 @@ set :images_dir, 'images'
 configure :build do
   # For example, change the Compass output style for deployment
   activate :minify_css
+
+  activate :minify_html
 
   # Minify Javascript on build
   activate :minify_javascript
