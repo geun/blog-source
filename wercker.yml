@@ -30,14 +30,20 @@ build:
 
         - bundle-install
         - script:
+          name: configure git
+          code: |
+            git config --global user.email "geunbaelee@gmail.com"
+            git config --global user.name "Geun"
+
+        - script:
             name: middleman build
             code: bundle exec middleman deploy
 
 #http://blog.wercker.com/2013/07/25/Using-wercker-to-publish-to-GitHub-pages.html
 #http://luke.vivier.ca/wintersmith-with-wercker/
-deploy:
-  steps:
-    - geun/geun.github.io:
-        token: $GH_TOKEN
-        basedir: build
-        repo: geun/geun.github.io
+#deploy:
+#  steps:
+#    - geun/geun.github.io:
+#        token: $GH_TOKEN
+#        basedir: build
+#        repo: geun/geun.github.io
