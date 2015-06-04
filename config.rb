@@ -29,7 +29,11 @@ activate :blog do |blog|
   blog.page_link = "page/{num}"
 end
 
+activate :directory_indexes
+
 page "/feed.xml", layout: false
+#https://github.com/statonjr/middleman-sitemap
+activate :sitemap, hostname: "http://geunbae.com"
 
 ###
 # Compass
@@ -87,13 +91,13 @@ set :images_dir, 'images'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
   # activate :relative_assets
@@ -106,8 +110,8 @@ end
 activate :deploy do |deploy|
   deploy.method = :git
   # Optional Settings
-  deploy.remote   = 'https://github.com/geun/geun.github.com.git' # remote name or git url, default: origin
-  # deploy.branch   = 'custom-branch' # default: gh-pages
+  deploy.remote   = 'https://github.com/geun/geun.github.io.git' # remote name or git url, default: origin
+  deploy.branch   = 'master' # default: gh-pages
   # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
   # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
   deploy.build_before = true # default: false
