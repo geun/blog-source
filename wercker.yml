@@ -31,7 +31,7 @@ build:
         - bundle-install
         - script:
             name: middleman build
-            code: bundle exec middleman deploy --verbose
+            code: bundle exec middleman deploy
 
 #http://blog.wercker.com/2013/07/25/Using-wercker-to-publish-to-GitHub-pages.html
 #http://luke.vivier.ca/wintersmith-with-wercker/
