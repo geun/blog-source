@@ -35,6 +35,10 @@ build:
             git config --global user.email "geunbaelee@gmail.com"
             git config --global user.name "Geun"
 
+        - add-ssh-key:
+            keyname: GITHUB_KEY
+            #http://blog.wercker.com/2013/12/03/Using-private-repos.html
+
         - script:
             name: middleman build
             code: bundle exec middleman deploy
