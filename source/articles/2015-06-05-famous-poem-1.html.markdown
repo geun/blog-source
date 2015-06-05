@@ -32,7 +32,7 @@ tags:
 언제 어디서든
 다가오는 그대 얼굴
 
-[youtube url="http://youtu.be/gbL3qPTFVr4"]
+[youtube url="https://youtu.be/gbL3qPTFVr4"]
 
 박강수 - 제발
 비 오는 날에 나가고 길나가고 싶을 때, 택시 타고 북악스카이 초입까지 올라간다.
