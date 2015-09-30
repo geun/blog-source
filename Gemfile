@@ -18,7 +18,6 @@ gem 'middleman-youtube', github: 'geun/middleman-youtube'
 # For feed.xml.builder
 gem "builder", "~> 3.0"
 
-group :development do
-  gem 'middleman-livereload'
-end
+gem 'middleman-livereload'
+gem 'rb-fsevent'
 

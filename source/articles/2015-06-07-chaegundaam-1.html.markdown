@@ -1,5 +1,5 @@
 ---
-title: chaegundaam-1
+title: 채근담의 지혜
 date: 2015-06-07 21:26 UTC
 tags:
 ---
