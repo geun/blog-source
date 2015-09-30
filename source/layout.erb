@@ -1,104 +1,40 @@
 <!doctype html>
-<html lang="ko" ng-app="blog">
+<html lang="ko">
   <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'/>
-
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
-    <meta name="viewport" content="initial-scale=1"/>
-
-    <!-- Angular Material Dependencies -->
-    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="/javascripts/main.js"></script>
-
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
     <title>Blog Title<%= ' - ' + current_article.title unless current_article.nil? %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
-  <body layout="column" ng-controller="AppCtrl">
-    <md-toolbar layout="row" class="md-tall">
-      <div class="md-toolbar-tools">
-        <!--<md-button ng-click="toggleSidenav('main-left')" hide-gt-sm class="md-icon-button">-->
-          <!--<md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>-->
-        <!--</md-button>-->
-
-        <a href="/">
-          <h1 class="md-display-2">Geun</h1>
-        </a>
-
-      </div>
-    </md-toolbar>
-    <!--<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="main-left">-->
-      <!--<aside>-->
-        <!--<h2>Recent Articles</h2>-->
-        <!--<ol>-->
-          <!--<% blog.articles[0...10].each do |article| %>-->
-              <!--<li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>-->
-          <!--<% end %>-->
-        <!--</ol>-->
-
-        <!--<h2>Tags</h2>-->
-        <!--<ol>-->
-          <!--<% blog.tags.each do |tag, articles| %>-->
-              <!--<li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>-->
-          <!--<% end %>-->
-        <!--</ol>-->
-
-        <!--<h2>By Year</h2>-->
-        <!--<ol>-->
-          <!--<% blog.articles.group_by { |a| a.date.year }.each do |year, articles| %>-->
-              <!--<li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>-->
-          <!--<% end %>-->
-        <!--</ol>-->
-      <!--</aside>-->
-    <!--</md-sidenav>-->
-    <md-content role="main" class='md-padding' layout="column">
-      <div layout="row" layout-wrap>
-        <!---->
-        <div flex-gt-sm="80" flex-gt-md="50" offset-gt-sm="10" style="margin-bottom: 60px; padding-bottom: 60px;">
-          <%= yield %>
-          <%= disqus_count %>
-        </div>
+  <body>
 
 
-        <aside class="md-tall" flex="80" flex-gt-md="25" offset-gt-sm="10">
-          <div layout="row" layout-gt-md="column" layout-wrap flex>
-            <div flex>
-              <h2>Recent Articles</h2>
-              <ol>
-                <% blog.articles[0...10].each do |article| %>
-                    <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-                <% end %>
-              </ol>
 
-            </div>
-            <div flex>
-              <h2>Tags</h2>
-              <ol>
-                <% blog.tags.each do |tag, articles| %>
-                    <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
-                <% end %>
-              </ol>
-            </div>
-            <div flex>
-              <h2>By Year</h2>
-              <ol>
-                <% blog.articles.group_by { |a| a.date.year }.each do |year, articles| %>
-                    <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
-                <% end %>
-              </ol>
-            </div>
-          </div>
-        </aside>
-      </div>
+    <div id="main" role="main">
+      <%= yield %>
+    </div>
 
-    </md-content>
+    <aside>
+      <h2>Recent Articles</h2>
+      <ol>
+        <% blog.articles[0...10].each do |article| %>
+            <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+        <% end %>
+      </ol>
 
+      <h2>Tags</h2>
+      <ol>
+        <% blog.tags.each do |tag, articles| %>
+            <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
+        <% end %>
+      </ol>
+
+      <h2>By Year</h2>
+      <ol>
+        <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+            <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
+        <% end %>
+      </ol>
+    </aside>
   </body>
 </html>
