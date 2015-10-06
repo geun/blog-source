@@ -2,9 +2,9 @@
 title: 반복된 일을 좀 쉽게 관리하기	
 date: 2015-10-06 21:26 UTC
 tags:
+published: false
 ---
 
 ## 로봇처럼 살기 
-
 
 ## 
