@@ -13,7 +13,7 @@ gem 'middleman-minify-html'
 gem "middleman-disqus"
 
 gem 'middleman-meta-tags'
-gem 'middleman-youtube', github: 'geun/middleman-youtube'
+# gem 'middleman-youtube', github: 'geun/middleman-youtube'
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
