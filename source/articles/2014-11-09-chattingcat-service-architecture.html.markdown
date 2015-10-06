@@ -1,5 +1,5 @@
 ---
-title: ChattingCat-Service-Architecture
+title: ChattingCat Service Architecture
 date: 2014-11-09 20:17 UTC
 tags:
 ---
