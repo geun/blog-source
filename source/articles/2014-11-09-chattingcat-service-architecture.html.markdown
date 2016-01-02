@@ -1,8 +1,9 @@
 ---
 title: ChattingCat Service Architecture
 date: 2014-11-09 20:17 UTC
-tags:
+tags: 스타트업,채팅캣,Rails
 description: 2014년 부터 2015년 초까지 사용한 채팅캣의 서비스 아키텍처
+keywords: 채팅캣,아키텍처,NGINX,AWS
 ---
 
 ### 채팅캣 서비스 아키텍처 관하여

@@ -80,7 +80,7 @@ activate :meta_tags
 
 # Methods defined in the helpers block are available in templates
 # helpers do
-#   def some_helper
+#   def set_meta_tag
 #     "Helping"
 #   end
 # end
