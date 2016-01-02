@@ -18,6 +18,7 @@
   <!-- Latest compiled and minified JavaScript -->
   <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
 
+  <%= display_meta_tags description: current_article.metadata[:page]['description'] if current_article && current_article.metadata[:page]['description'] %>
   <%= auto_display_meta_tags %>
 
 </head>
