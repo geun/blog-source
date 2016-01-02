@@ -2,7 +2,12 @@
 # Blog settings
 ###
 
-# Time.zone = "UTC"
+# Time.zone = "Seoul"
+
+page '/*.xml', layout: false
+page '/*.json', layout: false
+page '/*.txt', layout: false
+
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
@@ -35,7 +40,7 @@ activate :directory_indexes
 page "/feed.xml", layout: false
 #https://github.com/statonjr/middleman-sitemap
 activate :sitemap, hostname: "http://geunbae.com"
-activate :youtube
+# activate :youtube
 ###
 # Compass
 ###
@@ -73,8 +78,7 @@ activate :youtube
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
 
-# Reload the browser automatically whenever files change
-activate :livereload
+
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -83,11 +87,9 @@ activate :livereload
 #   end
 # end
 
-set :css_dir, 'stylesheets'
-
-set :js_dir, 'javascripts'
-
-set :images_dir, 'images'
+config[:css_dir] = 'stylesheets'
+config[:js_dir] = 'javascripts'
+config[:images_dir] = 'images'
 
 # Build-specific configuration
 configure :build do
@@ -110,17 +112,21 @@ configure :build do
 end
 
 # https://github.com/middleman-contrib/middleman-deploy
-activate :deploy do |deploy|
-  deploy.method = :git
-  # Optional Settings
-  deploy.remote   = 'https://github.com/geun/geun.github.io.git' # remote name or git url, default: origin
-  deploy.branch   = 'master' # default: gh-pages
-  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
-  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
-  deploy.build_before = true # default: false
-end
+# activate :deploy do |deploy|
+#   deploy.method = :git
+#   # Optional Settings
+#   deploy.remote   = 'https://github.com/geun/geun.github.io.git' # remote name or git url, default: origin
+#   deploy.branch   = 'master' # default: gh-pages
+#   # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
+#   # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
+#   deploy.build_before = true # default: false
+# end
 
 configure :development do
+
+  # Reload the browser automatically whenever files change
+  activate :livereload
+
   activate :disqus do |d|
     # using a special shortname
     d.shortname = "geunbaecomstaging"
