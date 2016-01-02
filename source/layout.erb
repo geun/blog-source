@@ -27,7 +27,9 @@
   <header>
     <div class="container">
       <div class="col-xs-12 text-center">
-        <h1>Ken Lee</h1>
+        <h1 class="site-name">Ken Lee</h1>
+        <h5 class="site-description">예수님처럼 낮추는 삶 <br/>
+          <small>매순간 최선 | 스타트업 이야기 | 호기심 | 소통과 배려 </small></h5>
       </div>
     </div>
   </header>
@@ -40,8 +42,8 @@
       </div>
     </div>
 
-    <aside style="margin-bottom: 50px;">
-      <hr />
+    <footer>
+      <hr/>
       <div class="row">
         <div class="col-xs-12 col-md-5 col-md-offset-2">
           <h2>Recent Articles</h2>
@@ -62,15 +64,17 @@
         </div>
 
         <!--<div class="col-xs-12 col-md-3">-->
-          <!--<h2>By Year</h2>-->
-          <!--<ol>-->
-            <!--<% blog.articles.group_by { |a| a.date.year }.each do |year, articles| %>-->
-                <!--<li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>-->
-            <!--<% end %>-->
-          <!--</ol>-->
+        <!--<h2>By Year</h2>-->
+        <!--<ol>-->
+        <!--
+        <% blog.articles.group_by { |a| a.date.year }.each do |year, articles| %>-->
+            <!--<li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>-->
+            <!--
+        <% end %>-->
+        <!--</ol>-->
         <!--</div>-->
       </div>
-    </aside>
+    </footer>
   </div>
 </div>
 
