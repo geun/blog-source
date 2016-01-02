@@ -38,6 +38,15 @@ footer {
   margin-bottom: 50px;
 }
 
+h1{
+  a {
+    color: #333;
+    &:hover {
+      color: #333;
+    }
+  }
+}
+
 .site-name {
   margin-bottom: 20px;
 }
