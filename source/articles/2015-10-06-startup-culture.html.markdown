@@ -5,7 +5,7 @@ tags:
 published: false
 ---
 
-## 페이스북에 공유된 글을 보다가
+### 페이스북에 공유된 글을 보다가
 
 [youtube url="https://youtu.be/O7EcT5YzKhQ"]
 

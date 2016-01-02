@@ -3,24 +3,26 @@ pageable: true
 per_page: 10
 ---
 <% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
+    <p>Page <%= page_number %> of <%= num_pages %></p>
 
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
-  <% end %>
+    <% if prev_page %>
+        <p><%= link_to '이전으로', prev_page %></p>
+    <% end %>
 <% end %>
 
 <% page_articles.each_with_index do |article, i| %>
-  <h2><%= link_to article.title, article %> </h2>
-  <span><%= article.date.strftime('%b %e') %></span>
+    <h2><%= link_to article.title, article %> </h2>
+    <span><%= article.date.strftime('%b %e') %></span>
 
-  <!-- use article.summary(250) if you have Nokogiri available to show just
-       the first 250 characters -->
-  <%= article.body %>
+    <!-- use article.summary(250) if you have Nokogiri available to show just
+         the first 250 characters -->
+    <%= article.summary(450) %>
+    <a href="<%= article.url %>">자세히 보기</a>
+
 <% end %>
 
 <% if paginate %>
-  <% if next_page %>
-    <p><%= link_to 'Next page', next_page %></p>
-  <% end %>
+    <% if next_page %>
+        <p><%= link_to '다음으로', next_page %></p>
+    <% end %>
 <% end %>

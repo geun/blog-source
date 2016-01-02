@@ -10,7 +10,7 @@ gem 'middleman-deploy', '~> 1.0'
 gem 'middleman-sitemap', '~> 0.0.13'
 gem 'middleman-minify-html'
 
-gem "middleman-disqus"
+gem "middleman-disqus", '~> 1.0'
 
 gem 'middleman-meta-tags'
 # gem 'middleman-youtube', github: 'geun/middleman-youtube'
@@ -18,6 +18,6 @@ gem 'middleman-meta-tags'
 # For feed.xml.builder
 gem "builder", "~> 3.0"
 
-gem 'middleman-livereload'
+gem 'middleman-livereload', "~> 3.4.5"
 gem 'rb-fsevent'
 

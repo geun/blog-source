@@ -1,0 +1,19 @@
+#MM site => META title
+#MM title => META title
+#MM description => META description
+#MM keywords => META keywords
+#MM twitter_card (defaults to summary_large_image) => META twitter:card
+#MM twitter_author => META twitter:creator
+#MM description => META twitter:description
+#MM pull_image => META twitter:image:src
+#MM publisher_twitter => META twitter:site
+#MM title => META twitter:title
+#MM description => META og:description
+#MM pull_image => META og:image
+#MM site => META og:site_name
+#MM title => META og:title
+
+site: geunbae.com
+title: Ken의 스타트업 이야기
+description: 스타트업을 하면서 느끼는 여러가지 감정과 일상들을 담았습니다.
+keywords: Startup, geubae.com, Kenlee

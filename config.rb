@@ -2,12 +2,7 @@
 # Blog settings
 ###
 
-# Time.zone = "Seoul"
-
-page '/*.xml', layout: false
-page '/*.json', layout: false
-page '/*.txt', layout: false
-
+# Time.zone = "UTC"
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
@@ -78,7 +73,10 @@ activate :sitemap, hostname: "http://geunbae.com"
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
 
+# Reload the browser automatically whenever files change
+activate :livereload
 
+activate :meta_tags
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -87,9 +85,12 @@ activate :automatic_image_sizes
 #   end
 # end
 
-config[:css_dir] = 'stylesheets'
-config[:js_dir] = 'javascripts'
-config[:images_dir] = 'images'
+
+set :css_dir, 'stylesheets'
+
+set :js_dir, 'javascripts'
+
+set :images_dir, 'images'
 
 # Build-specific configuration
 configure :build do
@@ -122,10 +123,7 @@ end
 #   deploy.build_before = true # default: false
 # end
 
-configure :development do
-
-  # Reload the browser automatically whenever files change
-  activate :livereload
+configure :development do |config|
 
   activate :disqus do |d|
     # using a special shortname
