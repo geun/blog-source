@@ -34,7 +34,7 @@ activate :directory_indexes
 
 page "/feed.xml", layout: false
 #https://github.com/statonjr/middleman-sitemap
-activate :sitemap, hostname: "http://geunbae.com"
+activate :sitemap, hostname: "https://kenlee.net"
 # activate :youtube
 ###
 # Compass
