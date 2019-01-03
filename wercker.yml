@@ -48,7 +48,7 @@ deploy:
             token: $GH_TOKEN
             basedir: build
             repo: geun/geun.github.io
-            domain: kenlee.net
+            domain: ken.md
 
 
 #http://blog.wercker.com/2013/07/25/Using-wercker-to-publish-to-GitHub-pages.html
