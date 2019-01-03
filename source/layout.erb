@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1'/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KenLee<%= ' - ' + current_article.title unless current_article.nil? %></title>
+  <title>Ken<%= ' - ' + current_article.title unless current_article.nil? %></title>
   <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
 
   <%= stylesheet_link_tag 'main' %>
@@ -27,8 +27,10 @@
   <header>
     <div class="container">
       <div class="col-xs-12 text-center">
-        <h1 class="site-name"><a href="/">Ken Lee</a></h1>
-        <h5 class="site-description">예수님처럼 낮추는 삶 <br/>
+        <h1 class="site-name"><a href="/">Ken.md</a></h1>
+        <h5 class="site-description">
+          몸은 낮추고, 꿈은 높이는 삶을, 창업가“인생은 너무 짧아서 다투고, 언짢아하고, 책임 추궁하고 그럴 시간이 없다. 오로지 사랑할 시간, 순간들밖에 없더라.”@마크 트웨인
+          <br/>
           <small>매순간 최선 | 스타트업 이야기 | 호기심 | 소통과 배려 </small></h5>
       </div>
     </div>
